@@ -9,6 +9,30 @@ import { Component } from '@angular/core';
 })
 export class PortalComponent {
 
-  constructor() {}
+  public activeShow: boolean = true;
+  public featuredShow = true;
+  public customShow = false;
+  public searchShow = false;
+
+  constructor() {
+  }
+
+  toggle(button: string) {
+    switch (button) {
+      case "activeShow":
+        this.activeShow = !this.activeShow;
+        break;
+      case "featuredShow":
+        console.log("Feature Toggle")
+        this.featuredShow = !this.featuredShow;
+        break;
+      case "customShow":
+        this.customShow = !this.customShow;
+        break;
+      case "searchShow":
+        this.searchShow = !this.searchShow;
+        break;
+    }
+  }
 
 }

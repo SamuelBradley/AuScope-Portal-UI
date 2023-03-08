@@ -25,50 +25,46 @@
     <li class="hasEvent" appPermanentLink></li>
 
     <!-- BEGIN Active Layers -->
-    <input type="checkbox" checked class="menuBtn" id="activeLayersBtn"/>
-    <h5 class="mb-1">
-        <label id="activeLayersLink" for="activeLayersBtn" class="mb-0" title="Layers added to map">
+    <h5 class="mb-1" >
+        <label (click)="toggle('activeShow')" id="activeLayersLink" class="mb-0 nav-title" title="Layers added to map">
             <i class="ti-filter"></i>
-            Active Layers
-            <i class="fa fa-arrow-circle-down"></i>
+            <span>Active Layers</span>
+            <i *ngIf="activeShow" class="fa fa-arrow-circle-down"></i>
         </label>
-        <ul class="card-sub" appActiveLayers></ul>
+        <ul *ngIf="activeShow" class="card-sub" appActiveLayers></ul>
     </h5>
     <!-- END Active Layers -->
 
     <!-- BEGIN Featured Layers -->
-    <input type="checkbox" class="menuBtn" id="featuredLayersBtn"/>
-    <h5 class="mb-1">
-        <label id="featuredLayersLink" for="featuredLayersBtn" class="mb-0" title="Select predefined layers">
+    <h5 class="mb-1" >
+      <label (click)="toggle('featuredShow')" id="featuredLayersLink" class="mb-0 nav-title" title="Select predefined layers">
             <i class="ti-layers"></i>
-            Featured Layers
-            <i class="fa fa-arrow-circle-down"></i>
+            <span>Featured Layers</span>
+            <i *ngIf="featuredShow" class="fa fa-arrow-circle-down"></i>
         </label>
-        <ul class="card-sub" appLayerPanel></ul>
+        <ul *ngIf="featuredShow" class="card-sub" appLayerPanel></ul>
     </h5>
     <!-- END Featured Layers -->
 
     <!-- BEGIN Custom Layers -->
-    <input type="checkbox" class="menuBtn" id="customLayersBtn"/>
-    <h5 class="mb-1">
-        <label for="customLayersBtn" class="mb-0" title="Enter a custom WMS endpoint">
+    <h5 class="mb-1" >
+        <label (click)="toggle('customShow')" class="mb-0 nav-title" title="Enter a custom WMS endpoint">
             <i class="ti-pencil-alt"></i>
-            Custom Layer
-            <i class="fa fa-arrow-circle-down"></i>
+            <span>Custom Layer</span>
+            <i *ngIf="customShow" class="fa fa-arrow-circle-down"></i>
         </label>
-        <ul class="card-sub" appCustomPanel></ul>
+        <ul *ngIf="customShow" class="card-sub" appCustomPanel></ul>
     </h5>
     <!-- END Custom Layers -->
 
     <!-- BEGIN Data Explorer -->
-    <input type="checkbox" class="menuBtn" id="dataBtn"/>
-    <h5 class="mb-1">
-        <label for="dataBtn" class="mb-0" title="Search CSW services for records">
+    <h5 class="mb-1" >
+        <label (click)="toggle('searchShow')" class="mb-0 nav-title" title="Search CSW services for records">
             <i class="ti-book"></i>
-            Data Search
-            <i class="fa fa-arrow-circle-down"></i>
+            <span>Data Search</span>
+            <i *ngIf="searchShow" class="fa fa-arrow-circle-down"></i>
         </label>
-        <ul class="card-sub" appDataExplorer></ul>
+        <ul *ngIf="searchShow" class="card-sub" appDataExplorer></ul>
     </h5>
     <!-- END Data Explorer -->
     
